@@ -68,10 +68,10 @@ molecule init scenario -r ansible_molecule_role -d docker --verifier-name testin
 # Run the full molecule test
 molecule test
 
-# Prepare only virtualization env where the role will be applied
+# Prepare only virtual env where the role will be applied
 molecule create 
 
-# Apply the role into your virtualization env
+# Apply the role into your virtual env
 molecule converge
 
 # Run molecule  unit test 
