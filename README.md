@@ -85,4 +85,4 @@ molecule list
 ```
 **CI/CD setup**
 
-For detailed instructions on creating a CI/CD for testing roles in Jenkins and building Allure reporting, visit [Medium]().
+For detailed instructions on creating CI/CD for testing Ansible roles in Jenkins and building Allure reports, please, visit my [Medium](https://medium.com/@pidumenk/the-idea-of-testing-ansible-roles-through-molecule-incl-25a63e9b759c) page.
