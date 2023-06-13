@@ -1,0 +1,26 @@
+---
+# tasks file for ansible_docker_role
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+    state: latest
+  loop: "{{ docker_supplementary_packages_list }}"
+
+- name: Add Docker GPG key
+  apt_key:
+    url: "{{ docker_repo_key_url }}"
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: "{{ docker_repo_url }}"
+    state: present
+
+- name: Update apt and install docker and dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: true
+    state: latest
+  loop: "{{ docker_required_packages_list }}"

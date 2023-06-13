@@ -1,0 +1,15 @@
+# --------------------------------------------------
+# Playbook to setup technical hosts
+# --------------------------------------------------
+
+---
+- hosts: os
+  user: ansible
+  become: True
+  gather_facts: True
+
+  roles:
+    - { role: ansible_docker_role,        tags: docker }
+    - { role: ansible_jenkins_role,       tags: jenkins }
+    - { role: ansible_molecule_role,      tags: molecule }
+...

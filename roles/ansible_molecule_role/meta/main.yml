@@ -1,0 +1,14 @@
+galaxy_info:
+  role_name: ansible_molecule_role
+  namespace: molecule
+  author: Pavel Dumenko
+  description: Installing allure-commandline, pytest, alure-pytest and molecule packages on Ubuntu hosts.
+   
+  license: MIT
+
+  min_ansible_version: TBD
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all

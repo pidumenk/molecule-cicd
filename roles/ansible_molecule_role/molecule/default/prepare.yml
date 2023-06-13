@@ -1,0 +1,14 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: Create user Jenkins
+      user:
+        name: jenkins
+
+    - name: Install required packages
+      apt:
+        name:
+          - zip
+          - curl
+        state: latest

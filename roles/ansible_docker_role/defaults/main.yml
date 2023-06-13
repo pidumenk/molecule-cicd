@@ -1,0 +1,16 @@
+---
+# vars file for ansible_jenkins_role 
+docker_repo_url: "deb https://download.docker.com/linux/ubuntu focal stable"
+docker_repo_key_url: "https://download.docker.com/linux/ubuntu/gpg"
+
+docker_supplementary_packages_list:
+  - ca-certificates
+  - curl
+  - gnupg
+
+docker_required_packages_list:
+  - docker-ce 
+  - docker-ce-cli 
+  - containerd.io 
+  - docker-buildx-plugin 
+  - docker-compose-plugin

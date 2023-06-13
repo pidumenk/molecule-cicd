@@ -1,0 +1,50 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ${JOB_NAME:-test}
+    image: jrei/systemd-ubuntu # It can be your prepared custom image
+#    command: /sbin/init or sleep 30...
+#    capabilities:
+#      - SYS_ADMIN or NET_ADMIN...
+    privilleged: true
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    pre_build_image: true
+provisioner:
+  name: ansible
+  options:
+    vvv: true
+  # FOR REMOTE DOCKER
+  # connection_options:
+  #   ansible_connection: community.docker.docker_api
+  #   ansible_docker_docker_host: tcp://$HOST:2376
+  #   ansible_user: $USER
+  #   ansible_become: true
+  env:
+    ANSIBLE_PIPELINING: false
+    # Enable verbosity for debugging your molecule role
+    # ANSIBLE_VERBOSITY: 3
+scenario:
+  name: default
+  test_sequence:
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  options:
+    vvv: true
+    # allurdir should match your Jenkins Allure Plugin configuration path. 
+    # This line generates results which will be taken for generating allure report in Jenkins.
+    alluredir: ${WORKSPACE}/target/allure-results 

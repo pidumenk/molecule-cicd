@@ -1,0 +1,32 @@
+---
+# tasks file for ansible_jenkins_role
+
+- name: Download Jenkins repo
+  apt_key:
+    url: "{{ jenkins_repo_key_url }}"
+    state: present
+
+- name: Make sure the repo is configured
+  apt_repository:
+    repo: "{{ jenkins_repo_url }}"
+    state: present
+
+- name: Install jenkins and required dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  loop: "{{ jenkins_required_packages_list }}"
+
+- name: Add the user Jenkins to the Docker group
+  ansible.builtin.user:
+    name: jenkins
+    groups: docker
+    append: yes
+   
+- name: Start and enable Jenkins
+  systemd:
+    name: jenkins
+    daemon_reload: yes
+    state: started
+    enabled: yes

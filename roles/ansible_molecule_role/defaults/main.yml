@@ -1,0 +1,16 @@
+---
+# defaults file for ansible_molecule_role
+venv_folder: /opt/molecule-virtualenv
+pip_required_packages_list: 
+    - pytest
+    - allure-pytest
+    - pytest-testinfra
+    - cryptography
+    - molecule
+    - molecule-plugins[docker]
+    - ansible
+    - hvac # It could be excluded if HashiCorp isn't used in your current setup
+pip_upgrade_packages_list:
+    - pip
+    - setuptools
+    - wheel
