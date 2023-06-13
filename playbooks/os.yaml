@@ -1,7 +1,4 @@
-# --------------------------------------------------
-# Playbook to setup technical hosts
-# --------------------------------------------------
-
+# Playbook for managing roles
 ---
 - hosts: os
   user: ansible
