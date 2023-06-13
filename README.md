@@ -4,9 +4,9 @@
 
 Getting started to build your sandbox in the cloud, you should have the following utilities
 installed:
-  - [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
-  - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-  - [AWS account](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) and [associated credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html) that allow you to create resources
+  - [Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli). 
+  - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+  - [AWS account](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) and [associated credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html) that allow you to create resources.
 
 To use your IAM credentials to authenticate the Terraform AWS provider, set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as environment variables or use `aws configure` сommand.
 
@@ -54,7 +54,7 @@ systemctl status docker
 systemctl status jenkins
 ```
 
-Molecule add-hoc commands
+Molecule add-hoc commands:
 
 ```bash
 # Create a new role with molecule scenario
