@@ -61,7 +61,7 @@ Molecule add-hoc commands:
 molecule init role acme.{{ROLE_NAME}} -d {{DRIVER_NAME}} --verifier-name {{VERIFIER_NAME}}
 molecule init role acme.my_new_role -d docker --verifier-name testinfra
 
-# Add molecule scenario to existing ansible role
+# Add molecule scenario to an existing ansible role
 molecule init scenario -r {{ROLE_NAME}} -d {{DRIVER_NAME}} --verifier-name {{VERIFIER_NAME}}
 molecule init scenario -r ansible_molecule_role -d docker --verifier-name testinfra
 
