@@ -1,4 +1,4 @@
-# molecule-cicd
+# Molecule automation (incl. Docker, Git, Ansible, Jenkins and Allure Framework)
 
 **Prerequisits**
 
